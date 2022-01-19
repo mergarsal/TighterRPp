@@ -1,0 +1,31 @@
+# Number of iterations 
+5
+# Field of view 
+1, 100 
+# Maximum parallax 
+1, 2.
+# Minimum depth for points 
+1.0 
+# Maximum depth for points
+8.0
+# Outlier fraction 
+1, 0.0
+# Focal length
+1, 800
+# Noise 
+1, 2.0
+# Number of correspondences 
+1, 100
+# Use custom t
+0
+# translation vector
+3, 0, 0, -1
+# max. angle for rotation
+0.5
+# method init (for iterative only):  0 (DLT), 1 (8pt), 2 (5pt), 3(RND)
+1
+# Use all correspondences 
+0
+# Max rotation perturbation
+0
+
