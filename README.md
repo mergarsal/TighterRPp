@@ -9,7 +9,7 @@ for more information.
 
 **Authors:** 
 [Mercedes Garcia-Salguero](https://mapir.isa.uma.es/mapirwebsite/?p=1718), 
-[Jesus Briales] (https://mapir.isa.uma.es/mapirwebsite/?p=2139), 
+[Jesus Briales](https://mapir.isa.uma.es/mapirwebsite/?p=2139), 
 [Javier Gonzalez-Jimenez](https://mapir.isa.uma.es/mapirwebsite/?p=1536)
 
 
