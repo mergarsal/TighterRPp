@@ -13,6 +13,8 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON) # We require C++ 14
 
 
+# Build the example
+set(BUILD_${LIBRARY_TARGET_NAME}_EXAMPLE ON)
 # build the tests
 set(BUILD_${LIBRARY_TARGET_NAME}_TESTS ON)
 
@@ -64,6 +66,7 @@ include_directories(${SDPA_INCLUDE_DIRS})
 
 set(${LIBRARY_TARGET_NAME}_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(${LIBRARY_TARGET_NAME}_SOURCE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/src)
+set(${LIBRARY_TARGET_NAME}_EXAMPLE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/example)
 set(${LIBRARY_TARGET_NAME}_TESTS_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/test)
 
 
@@ -132,9 +135,14 @@ install(TARGETS ${LIBRARY_TARGET_NAME}
  )
 
 
+# building the example
+    if(BUILD_${LIBRARY_TARGET_NAME}_EXAMPLE)
+    message(STATUS "Adding tests to build")
+    add_subdirectory(example)
+endif()
 
 # building the tests
-    if(BUILD_${LIBRARY_TARGET_NAME}_TESTS)
+if(BUILD_${LIBRARY_TARGET_NAME}_TESTS)
     message(STATUS "Adding tests to build")
     add_subdirectory(test)
 endif()

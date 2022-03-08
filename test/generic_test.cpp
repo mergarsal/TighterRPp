@@ -51,7 +51,12 @@ double distRot(Eigen::Matrix<double, 3, 3> & Rh, Eigen::Matrix<double, 3, 3> & R
 
 double distTrans(Eigen::Matrix<double, 3, 1> & th, Eigen::Matrix<double, 3, 1> & t)
 {
-        return (acos (th.dot(t)) * 180.0 / PI);
+        Eigen::Vector3d th_norm = th.normalized();
+        Eigen::Vector3d t_norm = t.normalized(); 
+        
+        double e_pos = (acos (th.dot(t)) * 180.0 / PI); 
+        double e_neg = (acos (-th.dot(t)) * 180.0 / PI);
+        return (std::min(e_pos, e_neg)); 
 };
 
 
