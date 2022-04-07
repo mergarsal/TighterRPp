@@ -2,7 +2,7 @@
 
 Convex relaxtions for the relative pose problem 
 between two calibrated cameras. 
-Refer to our paper [HERE]() 
+Refer to our paper [HERE](https://trebuchet.public.springernature.app/get_content/4be49395-75d2-4362-91d5-0fa53fce3660) 
 for more information.
 
 
@@ -21,14 +21,14 @@ If you use this code for your research, please cite:
 ```
 @ARTICLE{,
     author = {Garcia-Salguero, Mercedes and Briales, Jesus and Gonzalez-Jimenez, Javier},
-     month = {},
+     month = {April},
      title = {A Tighter Relaxation for the Relative Pose Problem Between Cameras},
    journal = {Journal of Mathematical Imaging and Vision},
     volume = {},
     number = {},
       year = {2022},
-       url = {},
-       doi = {},
+       url = {https://link.springer.com/article/10.1007/s10851-022-01085-z},
+       doi = {10.1007/s10851-022-01085-z},
      pages = {}
 }
 ```
