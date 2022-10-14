@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <sstream>
 #include <fstream>  // for the file
+#include <vector>
 
 #include <eigen3/Eigen/Dense>
 

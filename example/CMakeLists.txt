@@ -31,7 +31,7 @@ find_package(gflags REQUIRED)
 
 add_executable(example_base ${CMAKE_CURRENT_SOURCE_DIR}/example_base.cpp)
 target_link_libraries(example_base
-                                RelPose 
+                                SDPRPP 
                                 sdpa 
                                 lapack 
                                 blas 

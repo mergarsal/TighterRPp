@@ -8,6 +8,7 @@ Adaptation for the (central case) relative pose problem
 #include <stdlib.h>
 
 #include <functional>
+#include <vector>
 
 
 #include <eigen3/Eigen/Dense>

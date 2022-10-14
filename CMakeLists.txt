@@ -1,12 +1,12 @@
 # PROJECT CONFIGURATION
 cmake_minimum_required(VERSION 3.1)
 # set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel.")
-project(RelPose LANGUAGES C CXX VERSION 1.0.0)
+project(SDPRPP LANGUAGES C CXX VERSION 1.0.0)
 set(CMAKE_BUILD_TYPE Release)
 
 
 
-set(LIBRARY_TARGET_NAME "RelPose")
+set(LIBRARY_TARGET_NAME "SDPRPP")
 set(LIBRARY_TARGET_NAME_EXPORT "${LIBRARY_TARGET_NAME}Export")
 
 set(CMAKE_CXX_STANDARD 14)
@@ -71,8 +71,13 @@ set(${LIBRARY_TARGET_NAME}_TESTS_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/test)
 
 
 # Expose the include directories for this project
-set(${LIBRARY_TARGET_NAME}_ADD_INCLUDES ${ESSENTIAL_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR} )
-set(${LIBRARY_TARGET_NAME}_CERT_INCLUDES ${${LIBRARY_TARGET_NAME}_INCLUDE_DIRS} ${${LIBRARY_TARGET_NAME}_ADD_INCLUDES})
+set(${LIBRARY_TARGET_NAME}_ADD_INCLUDES 
+        ${SDPA_INCLUDE_DIRS} 
+        ${EIGEN3_INCLUDE_DIRS} 
+        )
+set(${LIBRARY_TARGET_NAME}_CERT_INCLUDES 
+        ${${LIBRARY_TARGET_NAME}_INCLUDE_DIRS} 
+        ${${LIBRARY_TARGET_NAME}_ADD_INCLUDES})
 
 
 
@@ -113,7 +118,14 @@ target_include_directories(${LIBRARY_TARGET_NAME} PUBLIC
 
 
 target_link_libraries(${LIBRARY_TARGET_NAME}
-        PUBLIC ${BLAS_LIBRARIES} ${M} ${LAPACK} )
+        PUBLIC 
+        ${BLAS_LIBRARIES} 
+        ${M} 
+        ${LAPACK} 
+        sdpa
+        blas
+        lapack
+        dmumps_seq)
 
 
 
@@ -146,3 +158,11 @@ if(BUILD_${LIBRARY_TARGET_NAME}_TESTS)
     message(STATUS "Adding tests to build")
     add_subdirectory(test)
 endif()
+
+
+
+
+
+# Install
+include(cmake/setup_installation.cmake)
+
